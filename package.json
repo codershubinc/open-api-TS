@@ -12,5 +12,9 @@
     "build": "tsc .",
     "start": "node index.js",
     "build:prod": "tsc --project tsconfig.prod.json"
+  },
+  "dependencies": {
+    "@types/express": "^5.0.0",
+    "express": "^4.21.2"
   }
 }
