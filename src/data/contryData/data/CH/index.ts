@@ -1,10 +1,10 @@
-import cities from './cities.ts';
-import femaleFirstName from './femaleFirstName.ts';
-import firstName from './firstName.ts';
-import lastName from './lastName.ts';
-import maleFirstName from './maleFirstName.ts';
-import states from './states.ts';
-import streets from './streets.ts';
+import cities from './cities';
+import femaleFirstName from './femaleFirstName';
+import firstName from './firstName';
+import lastName from './lastName';
+import maleFirstName from './maleFirstName';
+import states from './states';
+import streets from './streets';
 
 export default {
     cities,
