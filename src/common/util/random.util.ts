@@ -8,7 +8,5 @@ class random {
     }
 }
 
-
-
 const Random = new random();
 export default Random;

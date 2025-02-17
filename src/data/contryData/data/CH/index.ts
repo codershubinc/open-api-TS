@@ -1,17 +1,17 @@
-import firstName from './firstName'
-import lastName from './lastName'
-import streets from './streets'
-import states from './states'
-import cities from './cities'
-import femaleFirst from './femaleFirstName'
-import maleFirst from './maleFirstName'
+import cities from './cities.ts';
+import femaleFirstName from './femaleFirstName.ts';
+import firstName from './firstName.ts';
+import lastName from './lastName.ts';
+import maleFirstName from './maleFirstName.ts';
+import states from './states.ts';
+import streets from './streets.ts';
 
-export {
+export default {
+    cities,
+    femaleFirstName,
     firstName,
     lastName,
-    streets,
+    maleFirstName,
     states,
-    cities,
-    femaleFirst,
-    maleFirst
-}
+    streets,
+};

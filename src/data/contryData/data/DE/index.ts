@@ -1,10 +1,10 @@
-import firstName from './firstName'
-import lastName from './lastName'
-import streets from './streets'
-import states from './states'
-import cities from './cities'
-import femaleFirst from './femaleFirstName'
-import maleFirst from './maleFirstName'
+import firstName from './firstName.ts';
+import lastName from './lastName.ts';
+import streets from './streets.ts';
+import states from './states.ts';
+import cities from './cities.ts';
+import femaleFirst from './femaleFirstName.ts';
+import maleFirst from './maleFirstName.ts';
 
 export {
     firstName,
@@ -14,4 +14,4 @@ export {
     cities,
     femaleFirst,
     maleFirst
-}
+};
