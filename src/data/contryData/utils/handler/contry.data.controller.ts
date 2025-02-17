@@ -1,6 +1,6 @@
-import type { GetCountryDataUrl, FetchCountryData, DataFunction } from "../interfaces/contry.data.interfaces.ts";
-import Random from "@/common/util/random.util.ts";
-import countryCodes from "../constants/allContryCodes.ts";
+import type { GetCountryDataUrl, FetchCountryData, DataFunction } from "../interfaces/contry.data.interfaces";
+import Random from "@/common/util/random.util";
+import countryCodes from "../constants/allContryCodes";
 
 const getContryDataUrl: GetCountryDataUrl = (countryCode) => {
     return `@/data/contryData/data/${countryCode}`;
