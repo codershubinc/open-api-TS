@@ -9,7 +9,7 @@
     "typescript": "^5.0.0"
   },
   "scripts": {
-    "build": "tsc .",
+    "build": "tsc",
     "start": "node index.js",
     "dev": "bun --watch index.ts"
   },
