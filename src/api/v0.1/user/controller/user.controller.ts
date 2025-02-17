@@ -1,14 +1,12 @@
-import { Request, Response } from 'express';
-import { User } from '../../../models/user.model.ts';
-
+import type { Request, Response } from 'express';
 class UserController {
     async getAllUsers(req: Request, res: Response) {
-        const users = await User.findAll();
-        res.json(users);
+        const users = 'under development';
+        res.status(200).json(users);
     }
 
-    async createUser(req: Request, res: Response) {
-        const user = await User.create(req.body);
+    async createUser<Request>(req: Request, res: Response) {
+        const user = 'under development';
         res.status(201).json(user);
     }
 }
