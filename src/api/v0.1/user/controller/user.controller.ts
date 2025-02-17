@@ -3,8 +3,8 @@ import data from '@/data/contryData/utils/handler/contry.data.controller';
 
 const user = asynchandler(async (req, res) => {
 
-    const ftData = await data();
-    res.send(ftData);
+
+    res.send("this api is under development ...............");
 });
 
 export {
