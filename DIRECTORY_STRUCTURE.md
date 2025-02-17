@@ -1,0 +1,36 @@
+# Directory Structure
+
+```
+bun.lock
+CONTRIBUTING.md
+Dockerfile
+index.ts
+LICENSE
+package.json
+README.md
+src/
+	api/
+		v0.1/
+			index/
+				index.routes.ts
+			user/
+				controller/
+					user.controller.ts
+				interface/
+				routes/
+					user.routes.ts
+				utils/
+	common/
+		data/
+			userData/
+		handlers/
+			async.handler.ts
+		interfaces/
+			asyncHandler.interface.ts
+		util/
+			crypto.util.ts
+			random.util.ts
+tsconfig.json
+tsconfig.prod.json
+vercel.json
+```
