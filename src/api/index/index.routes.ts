@@ -1,7 +1,6 @@
-
 import { Router } from 'express';
 
-import userRoutes from '../user/routes/user.routes';
+import userRoutes from '../v0.1/user/routes/user.routes';
 
 
 

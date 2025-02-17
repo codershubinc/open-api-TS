@@ -11,11 +11,12 @@
   "scripts": {
     "build": "tsc .",
     "start": "node index.js",
-    "build:prod": "tsc --project tsconfig.prod.json"
+    "dev": "bun --watch index.ts"
   },
   "dependencies": {
     "@types/express": "^5.0.0",
     "crypto-js": "^4.2.0",
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "ts-node": "^10.9.2"
   }
 }
