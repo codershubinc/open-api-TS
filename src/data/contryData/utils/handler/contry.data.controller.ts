@@ -1,6 +1,4 @@
 import type { GetCountryDataUrl, FetchCountryData, DataFunction } from "../interfaces/contry.data.interfaces";
-
-const fetch = (await import('node-fetch')).default;
 import Random from "@/common/util/random.util";
 import countryCodes from "../constants/allContryCodes";
 
