@@ -14,36 +14,7 @@ bun run index.ts
 
 ## Directory Structure
 
-```
-bun.lock
-Dockerfile
-index.ts
-package.json
-README.md
-config/
-    tsconfig.json
-    tsconfig.prod.json
-    vercel.json
-src/
-    api/
-        v0.1/
-            user/
-                controller/
-                    user.controller.ts
-                interface/
-                routes/
-                utils/
-    common/
-        data/
-            userData/
-        handlers/
-            async.handler.ts
-        interfaces/
-            asyncHandler.interface.ts
-        util/
-            crypto.util.ts
-            random.util.ts
-```
+See [DIRECTORY_STRUCTURE.md](DIRECTORY_STRUCTURE.md) for details.
 
 ## License
 
