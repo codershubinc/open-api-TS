@@ -13,15 +13,17 @@
     "typescript": "^5.0.0"
   },
   "scripts": {
-    "build": "tsc",
-    "start": "node index.js",
+    "build": "tsc .",
     "dev": "bun --watch index.ts",
-    "lint": "eslint . --fix"
+    "lint": "eslint . --fix",
+    "compile": "tsc && tsc-alias",
+    "nd": "ts-node ."
   },
   "dependencies": {
     "@types/express": "^5.0.0",
     "crypto-js": "^4.2.0",
     "express": "^4.21.2",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "tsc-alias": "^1.8.10"
   }
 }

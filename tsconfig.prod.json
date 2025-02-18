@@ -2,5 +2,24 @@
     "extends": "./tsconfig.json",
     "compilerOptions": {
         "outDir": "./dist"
+    },
+    "include": [
+        "src/**/*.ts"
+    ],
+    "tsc-alias": {
+        "resolveFullPaths": true,
+        "verbose": false,
+        "baseUrl": "./src",
+        "paths": {
+            "@/*": [
+                "*"
+            ]
+        },
+        "exclude": [
+            "node_modules"
+        ],
+        "compilerOptions": {
+            "outDir": "./dist"
+        }
     }
 }
