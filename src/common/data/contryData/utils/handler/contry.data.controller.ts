@@ -12,7 +12,7 @@ const fetchContryData: FetchCountryData = async (url) => {
     return data;
 };
 
-const data: DataFunction = async (countryCode, dataType) => {
+const data: DataFunction = async (countryCode) => {
     const url = getContryDataUrl(countryCode || Random.fromArray(countryCodes));
     return fetchContryData(url);
 };
