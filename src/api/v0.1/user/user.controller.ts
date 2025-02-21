@@ -7,7 +7,7 @@ export class UserController {
     constructor(private readonly userService: UserService) { }
 
     @Get('/:country')
-    async getUserByContry(@Param('country') country: string) {
+    getUserByContry(@Param('country') country: string) {
         return this.userService.getUserByContry(country);
     }
 

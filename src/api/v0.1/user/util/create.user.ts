@@ -1,3 +1,5 @@
+import countryCodes from "@/common/data/contryData/utils/constants/allContryCodes";
+import getData from "@/common/data/contryData/utils/handler/contry.data.controller";
 
 
 
@@ -8,8 +10,14 @@ class getUser {
 
     byContry(country: string) {
 
-        console.log('return await getData(country);');
-        return `return await getData(${country});`;
+        try {
+            console.log('return await getData(country);');
+            if (!countryCodes.includes(country)) return 'Country not found';;
+            return getData(country);
+        } catch (error) {
+            console.log(error)
+
+        }
 
     }
 
