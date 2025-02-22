@@ -6,7 +6,7 @@ import cities from './cities';
 import femaleFirst from './femaleFirstName';
 import maleFirst from './maleFirstName';
 
-export {
+const data = {
     firstName,
     lastName,
     streets,
@@ -14,4 +14,6 @@ export {
     cities,
     femaleFirst,
     maleFirst
-};
+}
+
+export default data;

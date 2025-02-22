@@ -1,17 +1,19 @@
-import cities from './cities';
-import femaleFirstName from './femaleFirstName';
 import firstName from './firstName';
 import lastName from './lastName';
-import maleFirstName from './maleFirstName';
-import states from './states';
 import streets from './streets';
+import states from './states';
+import cities from './cities';
+import femaleFirst from './femaleFirstName';
+import maleFirst from './maleFirstName';
 
-export default {
-    cities,
-    femaleFirstName,
+const data = {
     firstName,
     lastName,
-    maleFirstName,
-    states,
     streets,
-};
+    states,
+    cities,
+    femaleFirst,
+    maleFirst
+}
+
+export default data;
