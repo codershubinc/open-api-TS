@@ -1,4 +1,4 @@
-import type { GetCountryDataUrl, FetchCountryData, DataFunction } from "../interfaces/contry.data.interfaces";
+import type { FetchCountryData, DataFunction } from "../interfaces/contry.data.interfaces";
 import Random from "../../../../util/random.util";
 import countryCodes from "../constants/allContryCodes";
 import contryImports from "../constants";
