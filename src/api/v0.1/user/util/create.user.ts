@@ -1,5 +1,5 @@
-import countryCodes from "@/common/data/contryData/utils/constants/allContryCodes";
-import getData from "@/common/data/contryData/utils/handler/contry.data.controller";
+import countryCodes from "../../../../common/data/contryData/utils/constants/allContryCodes"
+import getData from "../../../../common/data/contryData/utils/handler/contry.data.controller";
 
 
 
