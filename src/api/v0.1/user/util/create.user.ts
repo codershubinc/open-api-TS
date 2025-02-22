@@ -5,7 +5,9 @@ import getData from "@/common/data/contryData/utils/handler/contry.data.controll
 
 class getUser {
     constructor() {
+
         console.log('createUser')
+
     }
 
     byContry(country: string) {
