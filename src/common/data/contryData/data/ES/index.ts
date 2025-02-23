@@ -1,3 +1,4 @@
+import { ContryData } from '../../utils/interfaces/contry.data.interface';
 import firstName from './firstName';
 import lastName from './lastName';
 import streets from './streets';
@@ -16,4 +17,4 @@ const data = {
     maleFirst
 }
 
-export default data;
+export default data as ContryData;

@@ -1,11 +1,11 @@
 import { Injectable } from "@nestjs/common";
-import GetUser from "./util/create.user";
+import GetUser from "./util/getUserData";
 
 @Injectable()
 export class UserService {
     constructor() { }
 
     async getUserByContry(country: string) {
-        return await GetUser.byContry(country);
+        return await GetUser.byContryCode(country);
     }
 }

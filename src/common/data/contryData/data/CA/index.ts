@@ -5,6 +5,7 @@ import states from './states';
 import cities from './cities';
 import femaleFirst from './femaleFirstName';
 import maleFirst from './maleFirstName';
+import { ContryData } from '../../utils/interfaces/contry.data.interface';
 
 const data = {
     firstName,
@@ -14,6 +15,6 @@ const data = {
     cities,
     femaleFirst,
     maleFirst
-}
+};
 
-export default data;
+export default data as ContryData;

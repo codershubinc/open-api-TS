@@ -1,11 +1,11 @@
-import type { FetchCountryData, DataFunction } from "../interfaces/contry.data.interfaces";
+import type { FetchCountryData, DataFunction, ContryData } from "../interfaces/contry.data.interface";
 import Random from "../../../../util/random.util";
 import countryCodes from "../constants/allContryCodes";
 import contryImports from "../constants";
 
-const fetchCountryData: FetchCountryData = async (countryCode: string) => {
+const fetchCountryData: FetchCountryData = (countryCode: string) => {
     try {
-        const data = contryImports[countryCode];
+        const data: ContryData = contryImports[countryCode];
         return data;
     } catch (error) {
         console.error("Error fetching country data:", error);
@@ -15,7 +15,8 @@ const fetchCountryData: FetchCountryData = async (countryCode: string) => {
 
 const getData: DataFunction = async (countryCode?: string) => {
     const selectedCountry = countryCode || Random.fromArray(countryCodes);
-    return fetchCountryData(selectedCountry);
+    const data = fetchCountryData(selectedCountry);
+    return data;
 };
 
 export default getData;
