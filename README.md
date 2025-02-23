@@ -3,6 +3,7 @@
 This project is an open API implementation using TypeScript. It provides a set of common data and utilities for various countries, including city names, first names, last names, and more.
 
 ## Features
+
 - Common data for multiple countries
 - Utility functions for data handling
 - Modular structure for easy extension
@@ -14,7 +15,7 @@ To get started with this project, clone the repository and install the dependenc
 ```bash
 $ git clone <repository-url>
 $ cd open-api-TS
-$ npm install
+$ bun install or $ npm install
 ```
 
 ## Contributing
