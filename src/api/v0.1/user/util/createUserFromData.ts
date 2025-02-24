@@ -28,7 +28,8 @@ const USER = (data: ContryData) => {
             'City': Random.fromArray(data.cities),
             'State': Random.fromArray(data.states),
             'Zip': Random.zip()
-        }
+        },
+
     }
 }
 
