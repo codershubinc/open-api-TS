@@ -2,7 +2,7 @@ import { Controller, Get, Param } from "@nestjs/common";
 import { UserService } from "./user.service";
 
 
-@Controller('user')
+@Controller('/v0.1/user')
 export class UserController {
     constructor(private readonly userService: UserService) { }
 
@@ -10,7 +10,4 @@ export class UserController {
     getUserByContry(@Param('country') country: string) {
         return this.userService.getUserByContry(country);
     }
-
-
-
 }

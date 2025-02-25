@@ -1,5 +1,5 @@
-import { ContryData } from "@/common/data/contryData/utils/interfaces/contry.data.interface"
-import Random from "@/common/util/random.util"
+import { ContryData } from "../../../../common/data/contryData/utils/interfaces/contry.data.interface"
+import Random from "../../../../common/util/random.util"
 
 const USER = (data: ContryData) => {
     const gender = Random.fromArray(['M', 'F'])
