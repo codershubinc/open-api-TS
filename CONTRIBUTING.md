@@ -8,6 +8,7 @@ We welcome contributions to the Open API TS project! Here are some guidelines to
 2. Create a new branch for your feature or bugfix.
 3. Make your changes.
 4. Submit a pull request.
+5. For more information on the available API endpoints, please refer to the [API Endpoints Documentation](src/api/v0.1/api-endpoints.md).
 
 ## Code of Conduct
 
