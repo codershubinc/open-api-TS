@@ -18,6 +18,8 @@ $ cd open-api-TS
 $ bun install or $ npm install
 ```
 
+For more information on the available API endpoints, please refer to the [API Endpoints Documentation](src/api/v0.1/api-endpoints.md).
+
 ## Contributing
 
 We welcome contributions! Please see the [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines on how to contribute to this project.
