@@ -1,0 +1,36 @@
+const avatarStyles = [
+    "Adventurer",
+    "Adventurer_Neutral",
+    "Avataaars",
+    "Avataaars_Neutral",
+    "Big_Ears",
+    "Big_Ears_Neutral",
+    "Big_Smile",
+    "Bottts",
+    "Bottts_Neutral",
+    "Croodles",
+    "Croodles_Neutral",
+    "Dylan",
+    "Fun_Emoji",
+    "Glass",
+    "Icons",
+    "Identicon",
+    "Initials",
+    "Lorelei",
+    "Lorelei_Neutral",
+    "Micah",
+    "Miniavs",
+    "Notionists",
+    "Notionists_Neutral",
+    "Open_Peeps",
+    "Personas",
+    "Pixel_Art",
+    "Pixel_Art_Neutral",
+    "Rings",
+    "Shapes",
+    "Thumbs",
+]
+
+export {
+    avatarStyles
+}
