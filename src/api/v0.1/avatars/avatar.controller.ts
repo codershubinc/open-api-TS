@@ -22,11 +22,9 @@ export class AvatarController {
     }
 
     @Get('/:style')
-    async urlA(@Param('style') style: string, @Res() res: Response) {
+    async urlA(@Param('style') style: string) {
         try {
-            const imageUrl = await this.avatarService.getUrl(style, null);
-            console.log('imageUrl:', imageUrl);
-            res.setHeader('Content-Type', 'image/svg+xml');
+            const imageUrl = this.avatarService.getUrl(style, null);
             return imageUrl;
         } catch (error) {
             console.error('Error:', error);
