@@ -17,7 +17,7 @@ export class UserController {
                     this.userService.getUserByContry('random'),
                     'Success'
                 );
-                console.log('response:', response);
+
                 return response;
             }
 
@@ -34,12 +34,10 @@ export class UserController {
                 this.userService.getUserByContry(country),
                 'Success'
             );
-            console.log('response:', response);
+
             return response;
         } catch (error: any) {
-            console.error('Error:', error);
 
-            // If the error already has a status code (like 404), rethrow it
             if (error instanceof NotFoundException) {
                 throw error;
             }

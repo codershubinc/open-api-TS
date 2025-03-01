@@ -6,11 +6,7 @@ import USER from "./createUserDataFromData";
 
 
 class getUser {
-    constructor() {
-
-        console.log('createUser')
-
-    }
+    constructor() { }
 
     byContryCode(country: string) {
         try {
