@@ -11,45 +11,39 @@ export class UserController {
     @Get(['/:country', ''])
     async getUserByCountry(@Param('country') country: string) {
         try {
-            if (!country || country === '' || country.toLowerCase() === 'random') {
-                const responce = new ApiResponse(
+            if (!country || country.trim() === '' || country.toLowerCase() === 'random') {
+                const response = new ApiResponse(
                     200,
-                    await this.userService.getUserByContry('random'),
+                    this.userService.getUserByContry('random'),
                     'Success'
                 );
-                console.log('responce:', responce);
-                return responce;
-
+                console.log('response:', response);
+                return response;
             }
 
             if (!countryCodes.includes(country)) {
-                throw new NotFoundException(
-                    new ApiError(
-                        404,
-                        'Country not found',
-                        { validCodes: countryCodes },
-                        'Country not found'
-                    )
-                );
+                throw new NotFoundException({
+                    statusCode: 404,
+                    message: 'Invalid country code',
+                    validCodes: countryCodes
+                });
             }
 
-            const responce = new ApiResponse(
+            const response = new ApiResponse(
                 200,
-                await this.userService.getUserByContry(country),
+                this.userService.getUserByContry(country),
                 'Success'
             );
-            console.log('responce:', responce);
-            return responce;
-
+            console.log('response:', response);
+            return response;
         } catch (error: any) {
-            throw new InternalServerErrorException(
-                new ApiError(
-                    500,
-                    'Something went wrong | Unexpected error happened',
-                    error,
-                    error.stack
-                )
-            )
+            console.error('Error:', error);
+            throw !(error.statusCode === 404) ? new ApiError(
+                error.statusCode || 500,
+                error.message || 'Something went wrong',
+                error.errors || null,
+                error.stack || null
+            ) : error;
         }
     }
 }

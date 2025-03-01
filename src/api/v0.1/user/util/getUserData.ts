@@ -12,7 +12,7 @@ class getUser {
 
     }
 
-    async byContryCode(country: string) {
+    byContryCode(country: string) {
         try {
             // console.log('return await getData(country);', country);
             if (country === 'random') return USER(getData(Random.fromArray(countryCodes)))

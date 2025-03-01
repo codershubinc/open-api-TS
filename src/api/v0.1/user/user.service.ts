@@ -6,7 +6,7 @@ import asyncHandler from "../../../common/handlers/async.handler";
 export class UserService {
     constructor() { }
 
-    getUserByContry = async (country: any) => {
-        return await GetUser.byContryCode(country)
+    getUserByContry = (country: any) => {
+        return GetUser.byContryCode(country)
     }
 }
