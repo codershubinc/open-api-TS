@@ -1,17 +1,16 @@
-interface ApiResponse<T> {
-    status: string;
+class ApiResponse<ResponseData> {
+    statusCode: number;
+    data: ResponseData;
     message: string;
-    data?: T;
-}
+    success: boolean;
 
-class ResponseApi {
-    static success<T>(message: string, data?: T): ApiResponse<T> {
-        return {
-            status: 'success',
-            message,
-            data,
-        };
+
+    constructor(statusCode, data, message = "Success") {
+        this.statusCode = statusCode;
+        this.data = data;
+        this.message = message;
+        this.success = statusCode < 400;
     }
 }
 
-export { ResponseApi };
+export { ApiResponse }

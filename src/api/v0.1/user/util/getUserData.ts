@@ -16,7 +16,6 @@ class getUser {
         try {
             console.log('return await getData(country);');
             if (country === 'random') return USER(await getData(Random.fromArray(countryCodes)))
-            if (!countryCodes.includes(country)) return 'Country not found';
             return USER(await getData(country))
         } catch (error) {
             console.log(error)

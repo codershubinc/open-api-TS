@@ -1,32 +1,28 @@
 class ApiError extends Error {
-    public statusCode: number;
-    public isOperational: boolean;
+    statusCode: number;
+    data: any;
+    success: boolean;
+    errors: any
 
-    constructor(message: string, statusCode: number, isOperational: boolean = true) {
+
+    constructor(
+        statusCode = 500,
+        message = "Something went wrong",
+        errors: any,
+        stack = ""
+    ) {
         super(message);
         this.statusCode = statusCode;
-        this.isOperational = isOperational;
+        this.data = null;
+        this.success = false;
+        this.errors = errors;
 
-        Error.captureStackTrace(this, this.constructor);
+        if (stack) {
+            this.stack = stack;
+        } else {
+            Error.captureStackTrace(this, this.constructor);
+        }
     }
 }
 
-class BadRequestError extends ApiError {
-    constructor(message: string) {
-        super(message, 400);
-    }
-}
-
-class NotFoundError extends ApiError {
-    constructor(message: string) {
-        super(message, 404);
-    }
-}
-
-class InternalServerError extends ApiError {
-    constructor(message: string) {
-        super(message, 500);
-    }
-}
-
-export { ApiError, BadRequestError, NotFoundError, InternalServerError };
+export { ApiError };
