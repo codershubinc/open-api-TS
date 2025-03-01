@@ -13,7 +13,7 @@ const fetchCountryData: FetchCountryData = (countryCode: string) => {
     }
 };
 
-const getData: DataFunction = async (countryCode?: string) => {
+const getData: DataFunction = (countryCode?: string) => {
     const selectedCountry = countryCode || Random.fromArray(countryCodes);
     const data = fetchCountryData(selectedCountry);
     return data;

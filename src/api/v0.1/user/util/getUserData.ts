@@ -1,7 +1,7 @@
 import Random from "../../../../common/util/random.util";
 import countryCodes from "../../../../common/data/contryData/utils/constants/allContryCodes"
 import getData from "../../../../common/data/contryData/utils/handler/contry.data.controller";
-import USER from "./createUserFromData";
+import USER from "./createUserDataFromData";
 
 
 
@@ -14,9 +14,9 @@ class getUser {
 
     async byContryCode(country: string) {
         try {
-            console.log('return await getData(country);');
-            if (country === 'random') return USER(await getData(Random.fromArray(countryCodes)))
-            return USER(await getData(country))
+            // console.log('return await getData(country);', country);
+            if (country === 'random') return USER(getData(Random.fromArray(countryCodes)))
+            return USER(getData(country))
         } catch (error) {
             console.log(error)
         }

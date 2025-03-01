@@ -2,6 +2,8 @@ import { ContryData } from "../../../../common/data/contryData/utils/interfaces/
 import Random from "../../../../common/util/random.util"
 
 const USER = (data: ContryData) => {
+    // console.log('data:', data);
+
     const gender = Random.fromArray(['M', 'F'])
 
     const firstName = String(Random.fromArray(data[gender === 'M' ? 'maleFirst' : 'femaleFirst']))
@@ -33,5 +35,4 @@ const USER = (data: ContryData) => {
     }
 }
 
-export default
-    USER
+export default USER

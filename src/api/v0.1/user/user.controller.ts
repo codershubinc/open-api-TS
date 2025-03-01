@@ -9,14 +9,17 @@ export class UserController {
     constructor(private readonly userService: UserService) { }
 
     @Get(['/:country', ''])
-    getUserByCountry(@Param('country') country: string) {
+    async getUserByCountry(@Param('country') country: string) {
         try {
             if (!country || country === '' || country.toLowerCase() === 'random') {
-                return new ApiResponse(
+                const responce = new ApiResponse(
                     200,
-                    this.userService.getUserByContry('random'),
+                    await this.userService.getUserByContry('random'),
                     'Success'
                 );
+                console.log('responce:', responce);
+                return responce;
+
             }
 
             if (!countryCodes.includes(country)) {
@@ -30,16 +33,19 @@ export class UserController {
                 );
             }
 
-            return new ApiResponse(
+            const responce = new ApiResponse(
                 200,
-                this.userService.getUserByContry(country),
+                await this.userService.getUserByContry(country),
                 'Success'
             );
+            console.log('responce:', responce);
+            return responce;
+
         } catch (error: any) {
             throw new InternalServerErrorException(
                 new ApiError(
                     500,
-                    'Something went wrong',
+                    'Something went wrong | Unexpected error happened',
                     error,
                     error.stack
                 )

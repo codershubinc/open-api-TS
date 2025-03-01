@@ -7,9 +7,9 @@ export interface FetchCountryData {
 }
 
 export interface DataFunction {
-    (countryCode?: string, dataType?: string): Promise<any>;
-
+    (countryCode?: string);
 }
+
 
 export interface ContryData {
     firstName: string[],
