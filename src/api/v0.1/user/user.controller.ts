@@ -14,7 +14,7 @@ export class UserController {
             if (!country || country.trim() === '' || country.toLowerCase() === 'random') {
                 const response = new ApiResponse(
                     200,
-                    this.userService.getUserByContry('random'),
+                    await this.userService.getUserByContry('random'),
                     'Success'
                 );
                 console.log('response:', response);
@@ -31,19 +31,26 @@ export class UserController {
 
             const response = new ApiResponse(
                 200,
-                this.userService.getUserByContry(country),
+                await this.userService.getUserByContry(country),
                 'Success'
             );
             console.log('response:', response);
             return response;
         } catch (error: any) {
-            console.error('Error:', error.status);
-            throw !(error.status === 404) ? new ApiError(
+            console.error('Error:', error);
+
+            // If the error already has a status code (like 404), rethrow it
+            if (error instanceof NotFoundException) {
+                throw error;
+            }
+
+            // Handle unexpected errors
+            throw new InternalServerErrorException(new ApiError(
                 error.statusCode || 500,
                 error.message || 'Something went wrong',
                 error.errors || null,
                 error.stack || null
-            ) : error;
+            ));
         }
     }
 }
