@@ -9,12 +9,12 @@ export class UserController {
     constructor(private readonly userService: UserService) { }
 
     @Get(['/:country', ''])
-    async getUserByCountry(@Param('country') country: string) {
+    getUserByCountry(@Param('country') country: string) {
         try {
             if (!country || country.trim() === '' || country.toLowerCase() === 'random') {
                 const response = new ApiResponse(
                     200,
-                    await this.userService.getUserByContry('random'),
+                    this.userService.getUserByContry('random'),
                     'Success'
                 );
                 console.log('response:', response);
@@ -31,7 +31,7 @@ export class UserController {
 
             const response = new ApiResponse(
                 200,
-                await this.userService.getUserByContry(country),
+                this.userService.getUserByContry(country),
                 'Success'
             );
             console.log('response:', response);
