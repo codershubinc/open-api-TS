@@ -37,8 +37,8 @@ export class UserController {
             console.log('response:', response);
             return response;
         } catch (error: any) {
-            console.error('Error:', error);
-            throw !(error.statusCode === 404) ? new ApiError(
+            console.error('Error:', error.status);
+            throw !(error.status === 404) ? new ApiError(
                 error.statusCode || 500,
                 error.message || 'Something went wrong',
                 error.errors || null,
