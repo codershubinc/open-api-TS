@@ -22,7 +22,7 @@ export class AvatarController {
         try {
             const imageUrl = await this.avatarService.getUrl(style, null);
             console.log('imageUrl:', imageUrl);
-            res.setHeader('Content-Type', 'image/svg+xml');
+            res.sendFile(imageUrl);
         } catch (error) {
             console.error('Error:', error);
             throw new HttpException('Failed to fetch image', HttpStatus.INTERNAL_SERVER_ERROR);
