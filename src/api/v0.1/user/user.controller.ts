@@ -20,7 +20,6 @@ export class UserController {
 
                 return response;
             }
-
             if (!countryCodes.includes(country)) {
                 throw new NotFoundException({
                     statusCode: 404,
@@ -43,12 +42,14 @@ export class UserController {
             }
 
             // Handle unexpected errors
-            throw new InternalServerErrorException(new ApiError(
-                error.statusCode || 500,
-                error.message || 'Something went wrong',
-                error.errors || null,
-                error.stack || null
-            ));
+            throw new InternalServerErrorException(
+                new ApiError(
+                    error.statusCode || 500,
+                    error.message || 'Something went wrong',
+                    error.errors || null,
+                    error.stack || null
+                )
+            );
         }
     }
 }
