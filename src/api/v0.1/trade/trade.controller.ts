@@ -1,5 +1,5 @@
 import { Controller, Get } from "@nestjs/common";
-import { firstValueFrom } from "rxjs";
+import { getTradeData } from "./utils/getData";
 
 @Controller('/trade')
 export class TradeController {
@@ -7,7 +7,10 @@ export class TradeController {
 
     @Get('')
     async getTrade() {
-        // const data = await firstValueFrom(this.httpService.get('./data/overview/AAPL.json'));
-        return 'data';
+        const data = getTradeData(
+            'AAPL',
+            'overview',
+        )
+        return data
     }
 }
