@@ -1,5 +1,8 @@
-import { Controller, Get, Param } from "@nestjs/common";
+import { Controller, Get, NotFoundException, Param } from "@nestjs/common";
 import { getTradeData } from "./utils/getData";
+import { ApiResponse } from "../../../common/helpers/responce.api";
+import { ApiError } from "../../../common/helpers/error.api";
+import { symbols, tradeDataSymbols } from "./utils/constants";
 
 @Controller('/trade')
 export class TradeController {
@@ -11,13 +14,39 @@ export class TradeController {
         @Param('type') type: string,
     ) {
         try {
-            const data = getTradeData(
-                sym,
-                type,
-            )
-            return data
+            const data = getTradeData(sym, type);
+
+            if (!data) {
+                throw new NotFoundException(
+                    new ApiError(
+                        404,
+                        'Data not found for this symbol and type',
+                        [
+                            'check for correct symbols and type',
+                            ['available symbols', ...symbols],
+                            ['available types', ...tradeDataSymbols]
+                        ],
+                        null
+                    )
+                );
+            }
+
+            return new ApiResponse(200, data, '');
         } catch (error) {
-            return { error: error.message }
+            if (error instanceof NotFoundException) {
+                throw error; // Re-throw to let NestJS handle it
+            }
+
+            return new ApiError(
+                500,
+                'Internal server error',
+                [
+                    'check for correct symbols and type',
+                    ['available symbols', ...symbols],
+                    ['available types', ...tradeDataSymbols]
+                ],
+                error
+            );
         }
     }
 }
