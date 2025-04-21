@@ -34,7 +34,7 @@ export class TradeController {
             return new ApiResponse(200, data, '');
         } catch (error) {
             if (error instanceof NotFoundException) {
-                throw error; // Re-throw to let NestJS handle it
+                throw error;
             }
 
             return new ApiError(
