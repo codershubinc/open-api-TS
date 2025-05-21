@@ -23,7 +23,7 @@ export const homePageApi = [
         description: 'Get overview data for a specific trade symbol.'
     },
     {
-        path: '/v0.1/trade/:symbol/high-low',
+        path: '/v0.1/trade/:symbol/highLowData',
         method: 'GET',
         description: 'Get high/low data for a specific trade symbol.'
     }

@@ -4,6 +4,7 @@ export const getTradeData = (
     sym: string,
     type: string,
 ) => {
-    const data = tradeData?.[sym]?.[type]
+    const data = tradeData?.[type]?.[sym]
+
     return data ? data : null
 }

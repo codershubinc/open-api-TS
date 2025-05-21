@@ -4,7 +4,7 @@ import { ApiResponse } from "../../../common/helpers/responce.api";
 import { ApiError } from "../../../common/helpers/error.api";
 import { symbols, tradeDataSymbols } from "./utils/constants";
 
-@Controller('/trade')
+@Controller('/v0.1/trade')
 export class TradeController {
     constructor() { }
 
@@ -15,6 +15,10 @@ export class TradeController {
     ) {
         try {
             const data = getTradeData(sym, type);
+            console.log('type', type);
+            console.log('sym', sym);
+            console.log('data', data);
+
 
             if (!data) {
                 throw new NotFoundException(
@@ -23,8 +27,8 @@ export class TradeController {
                         'Data not found for this symbol and type',
                         [
                             'check for correct symbols and type',
-                            ['available symbols', ...symbols],
-                            ['available types', ...tradeDataSymbols]
+                            { 'available symbols': [...symbols] },
+                            { 'available types': [...tradeDataSymbols] }
                         ],
                         null
                     )
