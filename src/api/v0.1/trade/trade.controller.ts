@@ -15,10 +15,6 @@ export class TradeController {
     ) {
         try {
             const data = getTradeData(sym, type);
-            console.log('type', type);
-            console.log('sym', sym);
-            console.log('data', data);
-
 
             if (!data) {
                 throw new NotFoundException(
