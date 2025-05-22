@@ -13,11 +13,6 @@ export class AvatarService {
         style: string,
         query?: string | null
     ) {
-
-        try {
-            return AVATAR.getUrl(style, query);
-        } catch (error) {
-            throw error;
-        }
+        return AVATAR.getUrl(style, query);
     }
 }

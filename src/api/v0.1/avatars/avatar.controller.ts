@@ -1,7 +1,9 @@
-import { Controller, Get, Param, Res, HttpException, HttpStatus } from "@nestjs/common";
+import { Controller, Get, Param, Res, HttpException, HttpStatus, NotFoundException } from "@nestjs/common";
 import { AvatarService } from "./avatar.service";
 import axios from "axios";
 import { Response } from "express";
+import { ApiError } from "@/common/helpers/error.api";
+import { avatarStyles } from "./utils/avatar.constants";
 
 @Controller('/v0.1/avatar')
 export class AvatarController {
@@ -10,10 +12,34 @@ export class AvatarController {
     @Get('/:style/:query')
     url(@Param() params: { style: string; query: string }) {
         try {
+            if (!avatarStyles.includes(params.style)) {
+                throw new HttpException(
+                    new ApiError(
+                        400,
+                        'Bad Request',
+                        {
+                            "try_these types": [
+                                ...avatarStyles.map((style) => style.toLowerCase().replaceAll(" ", "-").replaceAll("_", "-"))
+                            ]
+                        }
+                    ),
+                    HttpStatus.BAD_REQUEST
+                );
+            }
             return this.avatarService.getUrl(params.style, params.query);
         } catch (error) {
             console.error('Error:', error);
-            throw new HttpException('Failed to generate URL', HttpStatus.INTERNAL_SERVER_ERROR);
+            throw new NotFoundException(
+                new ApiError(
+                    500,
+                    'Internal Server Error',
+                    {
+                        "try_these types": [
+                            ...avatarStyles.map((style) => style.toLowerCase().replaceAll(" ", "-").replaceAll("_", "-"))
+                        ]
+                    }
+                )
+            )
         }
     }
 
@@ -25,7 +51,17 @@ export class AvatarController {
             res.sendFile(imageUrl);
         } catch (error) {
             console.error('Error:', error);
-            throw new HttpException('Failed to fetch image', HttpStatus.INTERNAL_SERVER_ERROR);
+            throw new NotFoundException(
+                new ApiError(
+                    500,
+                    'Internal Server Error',
+                    {
+                        "try_these types": [
+                            ...avatarStyles.map((style) => style.toLowerCase().replaceAll(" ", "-").replaceAll("_", "-"))
+                        ]
+                    }
+                )
+            )
         }
     }
 }

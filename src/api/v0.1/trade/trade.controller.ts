@@ -10,6 +10,7 @@ export class TradeController {
 
     @Get('/:sym/:type')
     async getTrade(
+
         @Param('sym') sym: string,
         @Param('type') type: string,
     ) {

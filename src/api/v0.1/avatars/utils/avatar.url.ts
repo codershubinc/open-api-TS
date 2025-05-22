@@ -6,7 +6,6 @@ class avatar {
 
     getUrl(style: string, query?: string | null) {
 
-        if (!avatarStyles.includes(style)) throw Error('Invalid style');
         return `${this.endpoint}${style}/svg${query ? `?seed=${query}` : ''}`;
     }
 }
