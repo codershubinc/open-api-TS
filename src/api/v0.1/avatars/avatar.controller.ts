@@ -2,7 +2,7 @@ import { Controller, Get, Param, Res, HttpException, HttpStatus, NotFoundExcepti
 import { AvatarService } from "./avatar.service";
 import axios from "axios";
 import { Response } from "express";
-import { ApiError } from "@/common/helpers/error.api";
+import { ApiError } from "../../../common/helpers/error.api";
 import { avatarStyles } from "./utils/avatar.constants";
 
 @Controller('/v0.1/avatar')
